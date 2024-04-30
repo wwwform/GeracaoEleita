@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('sua-imagem-de-fundo.jpg'); /* Adicione o caminho da sua imagem de fundo */
+            background-image: url('https://1drv.ms/i/s!AvhM6yKRCGorgaVABLp0TaalX7hPlg'); /* Adicione o caminho da sua imagem de fundo */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -245,7 +245,7 @@
             }
 
             function updateWhatsAppMessage(item) {
-                whatsappMessage += `\nTamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}, Adicionais: ${item.additionals.join(", ")}, Coberturas: ${item.toppings.join(", ")}, Frutas: ${item.fruits.join(", ")}`;
+                whatsappMessage += `\n\nTamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}, Adicionais: ${item.additionals.join(", ")}, Coberturas: ${item.toppings.join(", ")}, Frutas: ${item.fruits.join(", ")}`;
             }
 
             sendToWhatsAppButton.addEventListener("click", function(event) {
@@ -261,7 +261,7 @@
                 message += whatsappMessage;
 
                 // Adicionar total ao pedido
-                message += `\nTotal: R$ ${totalValue.toFixed(2)}`;
+                message += `\n\nTotal: R$ ${totalValue.toFixed(2)}`;
 
                 // Enviar mensagem para o WhatsApp
                 const whatsappNumber = "27997094763"; // Substitua pelo número de WhatsApp correto
