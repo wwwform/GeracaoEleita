@@ -196,6 +196,7 @@
             const submitButton = document.getElementById("submit-button");
             const cartItems = document.getElementById("cart-items");
             const totalElement = document.getElementById("total");
+            let whatsappMessage = ""; // Variável para armazenar a mensagem do WhatsApp
 
             let totalValue = 0;
 
@@ -223,6 +224,9 @@
                 // Adicionar item ao carrinho
                 addItemToCart(item);
 
+                // Atualizar a mensagem do WhatsApp
+                updateWhatsAppMessage(item);
+
                 // Somar o preço do tamanho do açaí ao total
                 totalValue += sizePrice;
 
@@ -240,33 +244,21 @@
                 cartItemsList.appendChild(listItem);
             }
 
+            function updateWhatsAppMessage(item) {
+                whatsappMessage += `Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}, Adicionais: ${item.additionals.join(", ")}, Coberturas: ${item.toppings.join(", ")}, Frutas: ${item.fruits.join(", ")}\n`;
+            }
+
             sendToWhatsAppButton.addEventListener("click", function(event) {
                 event.preventDefault();
 
                 // Coletar os dados do formulário
                 const formData = new FormData(form);
                 const name = formData.get("name");
-                const size = formData.get("size");
-                const additionals = formData.getAll("additionals");
-                const toppings = formData.getAll("toppings");
-                const fruits = formData.getAll("fruits");
 
                 // Construir a mensagem do pedido
                 let message = `Pedido de Açaí:\n`;
                 message += `Nome: ${name}\n`;
-                message += `Tamanho: ${size}\n`;
-
-                if (additionals.length > 0) {
-                    message += `Adicionais: ${additionals.join(", ")}\n`;
-                }
-
-                if (toppings.length > 0) {
-                    message += `Coberturas: ${toppings.join(", ")}\n`;
-                }
-
-                if (fruits.length > 0) {
-                    message += `Frutas: ${fruits.join(", ")}\n`;
-                }
+                message += whatsappMessage;
 
                 // Adicionar total ao pedido
                 message += `Total: R$ ${totalValue.toFixed(2)}`;
