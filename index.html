@@ -123,6 +123,12 @@
             vertical-align: middle;
             margin-right: 5px;
         }
+
+        /* Estilo para o carrinho */
+        #cart-items li {
+            margin-bottom: 10px;
+            white-space: pre-wrap; /* Para manter a quebra de linha */
+        }
     </style>
 </head>
 <body>
@@ -159,7 +165,7 @@
                     <label for="add-chocolate"><img src="seu-icon-chocolate.jpg" alt=""> Cobertura de chocolate</label>
                     <input type="checkbox" id="add-morango" name="toppings" value="morango">
                     <label for="add-morango"><img src="seu-icon-morango.jpg" alt=""> Cobertura de morango</label>
-                    <input type="checkbox" id="add-leite-condensado" name="additionals" value="leite-condensado">
+                    <input type="checkbox" id="add-leite-condensado" name="toppings" value="leite-condensado">
                     <label for="add-leite-condensado"><img src="seu-icon-leite-condensado.jpg" alt=""> Leite condensado</label>
                 </fieldset>
                 <fieldset>
@@ -240,12 +246,12 @@
             function addItemToCart(item) {
                 const cartItemsList = document.getElementById("cart-items");
                 const listItem = document.createElement("li");
-                listItem.textContent = `Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}, Adicionais: ${item.additionals.join(", ")}, Coberturas: ${item.toppings.join(", ")}, Frutas: ${item.fruits.join(", ")}`;
+                listItem.textContent = `Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}\nAdicionais: ${item.additionals.join(", ")}\nCoberturas: ${item.toppings.join(", ")}\nFrutas: ${item.fruits.join(", ")}`;
                 cartItemsList.appendChild(listItem);
             }
 
             function updateWhatsAppMessage(item) {
-                whatsappMessage += `\n\nTamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}, Adicionais: ${item.additionals.join(", ")}, Coberturas: ${item.toppings.join(", ")}, Frutas: ${item.fruits.join(", ")}`;
+                whatsappMessage += `\n\nTamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}\nAdicionais: ${item.additionals.join(", ")}\nCoberturas: ${item.toppings.join(", ")}\nFrutas: ${item.fruits.join(", ")}`;
             }
 
             sendToWhatsAppButton.addEventListener("click", function(event) {
