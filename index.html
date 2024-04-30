@@ -245,7 +245,7 @@
             }
 
             function updateWhatsAppMessage(item) {
-                whatsappMessage += `Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}, Adicionais: ${item.additionals.join(", ")}, Coberturas: ${item.toppings.join(", ")}, Frutas: ${item.fruits.join(", ")}\n`;
+                whatsappMessage += `\nTamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}, Adicionais: ${item.additionals.join(", ")}, Coberturas: ${item.toppings.join(", ")}, Frutas: ${item.fruits.join(", ")}`;
             }
 
             sendToWhatsAppButton.addEventListener("click", function(event) {
@@ -261,7 +261,7 @@
                 message += whatsappMessage;
 
                 // Adicionar total ao pedido
-                message += `Total: R$ ${totalValue.toFixed(2)}`;
+                message += `\nTotal: R$ ${totalValue.toFixed(2)}`;
 
                 // Enviar mensagem para o WhatsApp
                 const whatsappNumber = "27997094763"; // Substitua pelo número de WhatsApp correto
