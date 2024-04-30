@@ -265,9 +265,9 @@
 
                 // Enviar mensagem para o WhatsApp
                 const whatsappNumber = "27997094763"; // Substitua pelo número de WhatsApp correto
-                const whatsappMessage = encodeURIComponent(message);
-                const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-                window.location.href = whatsappLink;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                window.open(whatsappLink, "_blank");
             });
         });
     </script>
