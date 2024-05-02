@@ -102,13 +102,16 @@
         input[type="checkbox"] {
             position: absolute;
             opacity: 0;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
 
         input[type="checkbox"] + label::before {
             content: "";
             position: absolute;
             left: 0;
-            top: 3px;
+            top: 0;
             width: 16px;
             height: 16px;
             border: 1px solid #ccc;
@@ -121,8 +124,16 @@
         }
 
         input[type="checkbox"] + label img {
-            vertical-align: middle;
-            margin-right: 5px;
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        input[type="checkbox"] + label {
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
         }
 
         /* Estilo para o carrinho */
@@ -179,9 +190,9 @@
                     <input type="checkbox" id="add-chocolate" name="toppings" value="chocolate">
                     <label for="add-chocolate"><img src="cobertura chocolate.jpg" alt=""> Cobertura de chocolate</label>
                     <input type="checkbox" id="add-morango" name="toppings" value="morango">
-                    <label for="add-morango"><img src="cobtura de morango.jpg" alt=""> Cobertura de morango</label>
+                    <label for="add-morango"><img src="cobertura de morango.jpg" alt=""> Cobertura de morango</label>
                     <input type="checkbox" id="add-leite-condensado" name="toppings" value="leite-condensado">
-                    <label for="add-leite-condensado"><img src="cobertura leite condensado.jpg" alt=""> Leite 
+                    <label for="add-leite-condensado"><img src="cobertura leite condensado.jpg" alt=""> Leite Condensado
                 </fieldset>
                 <fieldset>
                     <legend>Frutas:</legend>
