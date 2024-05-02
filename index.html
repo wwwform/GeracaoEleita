@@ -14,6 +14,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            color: white; /* Altera a cor do texto para branco */
         }
 
         header {
@@ -125,9 +126,16 @@
         }
 
         /* Estilo para o carrinho */
-        #cart-items li {
-            margin-bottom: 10px;
-            white-space: pre-wrap; /* Para manter a quebra de linha */
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart-item {
+            background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo semi-transparente para os itens do carrinho */
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -150,13 +158,13 @@
                     <legend>Adicionais:</legend>
                     <!-- Adicionais aqui -->
                     <input type="checkbox" id="add-leite-pó" name="additionals" value="leite-pó">
-                    <label for="add-leite-pó"><img src="https://www.google.com/imgres?q=leite%20em%20p%C3%B3&imgurl=http%3A%2F%2Facdn.mitiendanube.com%2Fstores%2F001%2F182%2F439%2Fproducts%2Fleite-integral-em-po-11-f755f94491ad47357c16200501333013-640-0.jpg&imgrefurl=https%3A%2F%2Fwww.emporiostarita.com.br%2Fprodutos%2Fleite-em-po-integral%2F&docid=2f9s6mKCnktI3M&tbnid=7xI2vpm6nLndrM&vet=12ahUKEwjDvu712-qFAxXWG7kGHWWjA6w4FBAzegQIahAA..i&w=640&h=640&hcb=2&ved=2ahUKEwjDvu712-qFAxXWG7kGHWWjA6w4FBAzegQIahAA" alt=""> Leite em pó</label>
+                    <label for="add-leite-pó"><img src="seu-icon-leite-pó.jpg" alt=""> Leite em pó</label>
                     <input type="checkbox" id="add-paçoca" name="additionals" value="paçoca">
-                    <label for="add-paçoca"><img src="https://www.google.com/imgres?q=pa%C3%A7oca&imgurl=https%3A%2F%2Fstatic.itdg.com.br%2Fimages%2F1200-675%2F8eade1386391ac5cf9e331ea75daa1ea%2F332856-original.jpg&imgrefurl=https%3A%2F%2Fwww.tudogostoso.com.br%2Freceita%2F67829-pacoca-super-pratica.html&docid=a31FORfRxBz8iM&tbnid=OTHPhQVQ-8cJIM&vet=12ahUKEwiArb-K3OqFAxV-GrkGHcRIAXIQM3oECBYQAA..i&w=1200&h=675&hcb=2&ved=2ahUKEwiArb-K3OqFAxV-GrkGHcRIAXIQM3oECBYQAA" alt=""> Paçoca</label>
+                    <label for="add-paçoca"><img src="seu-icon-paçoca.jpg" alt=""> Paçoca</label>
                     <input type="checkbox" id="add-granola" name="additionals" value="granola">
-                    <label for="add-granola"><img src="https://www.google.com/imgres?q=granola&imgurl=https%3A%2F%2Fcerealistamonteverde.com.br%2Fwp-content%2Fuploads%2F2018%2F11%2FIMG_9693-34.jpg&imgrefurl=https%3A%2F%2Fcerealistamonteverde.com.br%2Fproduto%2Fgranola-tradicional%2F&docid=kGuo3V5t2O6_NM&tbnid=FVCVU0gBwfYI9M&vet=12ahUKEwiotLqn3OqFAxUspZUCHXLQAmsQM3oECHcQAA..i&w=894&h=853&hcb=2&ved=2ahUKEwiotLqn3OqFAxUspZUCHXLQAmsQM3oECHcQAA" alt=""> Granola</label>
+                    <label for="add-granola"><img src="seu-icon-granola.jpg" alt=""> Granola</label>
                     <input type="checkbox" id="add-amendoim" name="additionals" value="amendoim">
-                    <label for="add-amendoim"><img src="https://www.google.com/imgres?q=amendoim&imgurl=https%3A%2F%2Fcdn.awsli.com.br%2F600x450%2F4%2F4552%2Fproduto%2F38924136%2F3dfa3bdc13.jpg&imgrefurl=https%3A%2F%2Fwww.casadonaturalista.com.br%2Famendoim-natural-torrado-sem-pele-e-sem-sal-250g&docid=999cFmRxHdvTYM&tbnid=UB2PT1Mituk7mM&vet=12ahUKEwiw58LB3OqFAxWKqJUCHWdUCFQQM3oECCcQAA..i&w=600&h=450&hcb=2&ved=2ahUKEwiw58LB3OqFAxWKqJUCHWdUCFQQM3oECCcQAA" alt=""> Amendoim</label>
+                    <label for="add-amendoim"><img src="seu-icon-amendoim.jpg" alt=""> Amendoim</label>
                 </fieldset>
                 <fieldset>
                     <legend>Coberturas:</legend>
@@ -247,6 +255,7 @@
                 const cartItemsList = document.getElementById("cart-items");
                 const listItem = document.createElement("li");
                 listItem.textContent = `Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}\nAdicionais: ${item.additionals.join(", ")}\nCoberturas: ${item.toppings.join(", ")}\nFrutas: ${item.fruits.join(", ")}`;
+                listItem.classList.add("cart-item"); // Adiciona a classe "cart-item"
                 cartItemsList.appendChild(listItem);
             }
 
