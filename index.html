@@ -53,7 +53,6 @@
             position: relative;
             padding-left: 25px;
             cursor: pointer;
-            color: black; /* Cor do texto preto */
         }
 
         input[type="text"],
@@ -127,27 +126,23 @@
         }
 
         /* Estilo para o carrinho */
-        #cart-items {
-            list-style-type: none;
-            padding: 0;
+        #cart-items li {
+            margin-bottom: 10px;
+            white-space: pre-wrap; /* Para manter a quebra de linha */
+            color: white; /* Altera a cor do texto do carrinho para branco */
         }
 
-        .cart-item {
-            background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo semi-transparente para os itens do carrinho */
-            padding: 10px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            color: white; /* Cor do texto branco */
+        img {
+            max-width: 100%; /* Define a largura máxima da imagem como 100% do contêiner */
+            height: auto; /* Ajusta automaticamente a altura para manter a proporção */
+            display: block; /* Garante que as imagens não tenham espaços em branco ao redor */
+            margin: 0 auto; /* Centraliza as imagens horizontalmente */
+            margin-bottom: 10px; /* Adiciona margem inferior para separar visualmente as imagens */
         }
 
-        /* Estilo para o título do carrinho */
-        #cart h2 {
-            color: white; /* Cor do texto branco */
-        }
-
-        /* Estilo para o total do carrinho */
+        #cart h2,
         #total {
-            color: white; /* Cor do texto branco */
+            color: white; /* Altera a cor do texto para branco */
         }
     </style>
 </head>
@@ -169,34 +164,14 @@
                 <fieldset>
                     <legend>Adicionais:</legend>
                     <!-- Adicionais aqui -->
-                    <input type="checkbox" id="add-leite-pó" name="additionals" value="leite-pó">
-                    <label for="add-leite-pó"><img src="leite em po.jpg" alt=""> Leite em pó</label>
-                    <input type="checkbox" id="add-paçoca" name="additionals" value="paçoca">
-                    <label for="add-paçoca"><img src="pacoca.jpg" alt=""> Paçoca</label>
-                    <input type="checkbox" id="add-granola" name="additionals" value="granola">
-                    <label for="add-granola"><img src="granola.jpg" alt=""> Granola</label>
-                    <input type="checkbox" id="add-amendoim" name="additionals" value="amendoim">
-                    <label for="add-amendoim"><img src="amendoim.jpg" alt=""> Amendoim</label>
                 </fieldset>
                 <fieldset>
                     <legend>Coberturas:</legend>
                     <!-- Coberturas aqui -->
-                    <input type="checkbox" id="add-chocolate" name="toppings" value="chocolate">
-                    <label for="add-chocolate"><img src="cobertura chocolate.jpg" alt=""> Cobertura de chocolate</label>
-                    <input type="checkbox" id="add-morango" name="toppings" value="morango">
-                    <label for="add-morango"><img src="cobtura de morango.jpg" alt=""> Cobertura de morango</label>
-                    <input type="checkbox" id="add-leite-condensado" name="toppings" value="leite-condensado">
-                    <label for="add-leite-condensado"><img src="cobertura leite condensado.jpg" alt=""> Leite condensado</label>
                 </fieldset>
                 <fieldset>
                     <legend>Frutas:</legend>
                     <!-- Frutas aqui -->
-                    <input type="checkbox" id="add-banana" name="fruits" value="banana">
-                    <label for="add-banana"><img src="fruta banana.jpg" alt=""> Banana</label>
-                    <input type="checkbox" id="add-morango-fruta" name="fruits" value="morango">
-                    <label for="add-morango-fruta"><img src="fruta morango.jpg" alt=""> Morango</label>
-                    <input type="checkbox" id="add-uva-fruta" name="fruits" value="uva">
-                    <label for="add-uva-fruta"><img src="fruta uva.jpg" alt=""> Uva</label>
                 </fieldset>
                 <button type="button" id="add-to-cart-button">Adicionar ao carrinho</button>
                 <button type="button" id="send-to-whatsapp-button">Enviar para o WhatsApp</button>
@@ -204,11 +179,11 @@
             </form>
         </section>
         <div id="cart">
-            <h2 style="color: white;">Carrinho</h2> <!-- Altera a cor do título do carrinho para branco -->
+            <h2>Carrinho</h2>
             <ul id="cart-items">
                 <!-- Itens do carrinho serão adicionados aqui -->
             </ul>
-            <p id="total" style="color: white;">Total: R$ 0,00</p> <!-- Altera a cor do texto do total para branco -->
+            <p id="total">Total: R$ 0,00</p>
         </div>
     </main>
     <footer>
@@ -267,7 +242,6 @@
                 const cartItemsList = document.getElementById("cart-items");
                 const listItem = document.createElement("li");
                 listItem.textContent = `Tamanho: ${item.size}, Preço: R$ ${item.price.toFixed(2)}\nAdicionais: ${item.additionals.join(", ")}\nCoberturas: ${item.toppings.join(", ")}\nFrutas: ${item.fruits.join(", ")}`;
-                listItem.classList.add("cart-item"); // Adiciona a classe cart-item ao item do carrinho
                 cartItemsList.appendChild(listItem);
             }
 
