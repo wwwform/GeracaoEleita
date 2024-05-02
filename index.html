@@ -7,136 +7,138 @@
     <style>
         /* Estilos CSS aqui */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('Emblema GE.jpeg'); /* Adicione o caminho da sua imagem de fundo */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white; /* Altera a cor do texto para branco */
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('Emblema GE.jpeg'); /* Adicione o caminho da sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: black; /* Altera a cor do texto para preto */
+}
 
-        header {
-            background-color: #ffd700; /* cor de fundo amarela */
-            padding: 20px;
-            text-align: center;
-        }
+header {
+    background-color: #ffd700; /* cor de fundo amarela */
+    padding: 20px;
+    text-align: center;
+}
 
-        h1 {
-            margin: 0;
-            color: #333; /* cor do texto preto */
-        }
+h1 {
+    margin: 0;
+    color: black; /* cor do texto preto */
+}
 
-        main {
-            padding: 20px;
-        }
+main {
+    padding: 20px;
+}
 
-        #order-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.8); /* Adicione uma cor de fundo para o formulário */
-            padding: 20px;
-            border-radius: 8px;
-        }
+#order-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Adicione uma cor de fundo para o formulário */
+    padding: 20px;
+    border-radius: 8px;
+}
 
-        form {
-            background-color: transparent;
-            padding: 20px;
-            border-radius: 8px;
-        }
+form {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+}
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            position: relative;
-            padding-left: 25px;
-            cursor: pointer;
-        }
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    color: black; /* Cor do texto preto */
+}
 
-        input[type="text"],
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-        fieldset {
-            margin-bottom: 15px;
-        }
+fieldset {
+    margin-bottom: 15px;
+}
 
-        legend {
-            font-weight: bold;
-        }
+legend {
+    font-weight: bold;
+}
 
-        button {
-            background-color: #4caf50; /* cor de fundo verde */
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-right: 10px;
-        }
+button {
+    background-color: #4caf50; /* cor de fundo verde */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
 
-        button:hover {
-            background-color: #45a049; /* cor de fundo verde mais escura */
-        }
+button:hover {
+    background-color: #45a049; /* cor de fundo verde mais escura */
+}
 
-        footer {
-            background-color: #333; /* cor de fundo preta */
-            color: #fff; /* cor do texto branco */
-            padding: 20px;
-            text-align: center;
-        }
+footer {
+    background-color: #333; /* cor de fundo preta */
+    color: #fff; /* cor do texto branco */
+    padding: 20px;
+    text-align: center;
+}
 
-        footer a {
-            color: #ffd700; /* cor do link amarelo */
-        }
+footer a {
+    color: #ffd700; /* cor do link amarelo */
+}
 
-        /* Estilizando os checkboxes */
-        input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-        }
+/* Estilizando os checkboxes */
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
 
-        input[type="checkbox"] + label::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 3px;
-            width: 16px;
-            height: 16px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            background-color: #fff;
-        }
+input[type="checkbox"] + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+}
 
-        input[type="checkbox"]:checked + label::before {
-            background-color: #4caf50; /* cor de fundo verde */
-        }
+input[type="checkbox"]:checked + label::before {
+    background-color: #4caf50; /* cor de fundo verde */
+}
 
-        input[type="checkbox"] + label img {
-            vertical-align: middle;
-            margin-right: 5px;
-        }
+input[type="checkbox"] + label img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
 
-        /* Estilo para o carrinho */
-        #cart-items {
-            list-style-type: none;
-            padding: 0;
-        }
+/* Estilo para o carrinho */
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
 
-        .cart-item {
-            background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo semi-transparente para os itens do carrinho */
-            padding: 10px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-        }
+.cart-item {
+    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo semi-transparente para os itens do carrinho */
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: white; /* Cor do texto branco */
+}
     </style>
 </head>
 <body>
